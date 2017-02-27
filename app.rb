@@ -22,3 +22,13 @@ require("sinatra")
     stylist.save()
     erb(:stylist_success)
   end
+
+  get("/stylists") do
+    @stylists = Stylists.all()
+    erb(:stylists)
+  end
+
+  get("/stylists/:id") do
+    @stylist = Stylist.find(params.fetch("id").to_i())
+    erb(:stylist)
+  end
