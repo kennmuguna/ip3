@@ -19,10 +19,16 @@ class Client
         clients
     end
 
+    define_method (:name) do
+        @name
+    end
+    
     define_method (:save) do
         result = DB.exec("INSERT INTO stylists (name) VALUES ('#{@name}') RETURNING id;")
         @id = result.first().fetch("id").to_i()
     end
+
+
 
     define_method (:==) do
         self.name().==(another_client.name()).&(self.phone().==(another_client.phone())).&(self.id().==(another_client.id()))

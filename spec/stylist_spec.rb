@@ -27,4 +27,6 @@ describe(Stylist)
         expect(Stylist.all()).to(eq([test_stylist]))
       end
      end
+
+  
     

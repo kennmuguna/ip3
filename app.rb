@@ -32,3 +32,24 @@ require("sinatra")
     @stylist = Stylist.find(params.fetch("id").to_i())
     erb(:stylist)
   end
+
+  get("/clients/new") do
+    erb(:client_form)
+  end
+
+  post("/clients") do
+    name = params.fetch("name")
+    client = Client.new({:name => name, :phone => phone, :id => nil})
+    client.save()
+    erb(:client_success)
+  end
+
+  get("/clients") do
+    @clients = Clients.all()
+    erb(:clients)
+  end
+
+  get("/clients/:id") do
+    @client = Client.find(params.fetch("id").to_i())
+    erb(:client)
+  end

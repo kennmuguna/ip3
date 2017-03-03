@@ -9,7 +9,7 @@ class Stylist
     define_method(:==)  do |another_stylist|
         self.name().==(another_stylist.name())
     end
-end
+
 
     define_singleton_method(:all) do
         returned_names = DB.exec("SELECT * FROM stylists;")

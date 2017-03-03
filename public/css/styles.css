@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    background: url("../images/back1.jpg");
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+h4 {
+    color: grey;
+}
